@@ -1,0 +1,179 @@
+/* Variables de Color */
+:root {
+    --color-principal: #6A1B9A; /* Morado Oscuro */
+    --color-secundario: #FFEB3B; /* Amarillo Brillante */
+    --color-fondo: #F3E5F5; /* Morado muy claro */
+    --color-texto-claro: #FFFFFF;
+    --color-texto-oscuro: #212121;
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-oscuro);
+    line-height: 1.6;
+}
+
+/* Encabezado y Menú */
+header {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    padding: 15px 0;
+    position: sticky; /* Menú Fijo */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-general ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-general li a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.menu-general li a:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+}
+
+/* Estilo para el enlace activo (resaltado por JavaScript) */
+.menu-general a.active {
+    background-color: var(--color-secundario);
+    color: var(--color-principal) !important;
+    border-radius: 5px;
+}
+
+/* Contenido Principal y Secciones */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion {
+    background-color: var(--color-texto-claro);
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--color-principal);
+}
+
+.seccion h1, .seccion h2 {
+    color: var(--color-principal);
+    border-bottom: 2px solid var(--color-secundario);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.seccion h3 {
+    color: var(--color-principal);
+    margin-top: 25px;
+}
+
+/* Estilos de Lista y Tabla */
+ul, ol {
+    padding-left: 20px;
+}
+
+ul li, ol li {
+    margin-bottom: 8px;
+}
+
+/* Tablas de Contenidos */
+.areas-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.areas-tabla th, .areas-tabla td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.areas-tabla th {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+}
+
+.areas-tabla tr:nth-child(even) {
+    background-color: var(--color-fondo); /* Fondo suave en filas pares */
+}
+
+/* Imágenes (Reales) */
+.imagenes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.imagenes img {
+    display: block;
+    width: 45%; /* Ajuste para 2 imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border: 2px solid var(--color-secundario); /* Borde con el color de acento */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse mucho */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Pie de Página - Fuentes */
+footer {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.fuentes {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    padding-top: 10px;
+    border-top: 1px dashed var(--color-secundario);
+}
+
+.fuentes h3 {
+    color: var(--color-secundario);
+    margin-top: 0;
+}
+
+.fuentes p {
+    font-size: 0.9em;
+}
+
+/* Media Queries para Responsive */
+@media (max-width: 768px) {
+    .menu-general ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-general li a {
+        padding: 10px 10px;
+    }
+    .imagenes {
+        flex-direction: column;
+        align-items: center;
+    }
+    .imagenes img {
+        width: 90%;
+    }
+}
